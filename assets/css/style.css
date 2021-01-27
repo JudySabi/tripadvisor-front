@@ -1,20 +1,30 @@
-body {
+body header {
   font-family: Questrial, sans-serif;
   font-weight: 600;
   /* -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; */
   width: 1280px;
-  /* border: solid 2px red; */
+  margin: 0 auto;
+}
+body main {
+  font-family: Questrial, sans-serif;
+  font-weight: 600;
+  width: 1280px;
   margin: 0 auto;
 }
 
+p {
+  font-family: "Roboto Slab", serif;
+  font-weight: 400;
+}
 /************ HEADER *************/
 
 header {
   height: 55px;
   display: flex;
   justify-content: space-between;
-  margin-top: 9px;
+  margin-top: 20px;
+  align-items: center;
 }
 
 .leftPart {
@@ -72,6 +82,11 @@ header input {
   border-radius: 8px;
   align-self: center;
   padding: 0 12px;
+  margin-left: 15px;
+  align-items: center;
+}
+header input:focus {
+  border: none;
 }
 
 main h1 {
@@ -107,6 +122,12 @@ main h1 span:first-child {
   cursor: pointer;
 }
 
+.categories div:hover {
+  background-color: black;
+  color: #ffffff;
+  fill: #ffffff;
+}
+
 .categories div:not(svg) {
   padding-top: 15px;
 }
@@ -118,13 +139,18 @@ main h1 span:first-child {
   width: 1280px;
   height: 430px;
   margin-top: 25px;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .pictures img {
   box-sizing: border-box;
   object-fit: cover;
   object-position: center;
+}
+.pictures > img {
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  width: 850px;
 }
 .pictures div {
   display: flex;
@@ -135,10 +161,105 @@ main h1 span:first-child {
 .pictures div img {
   object-fit: cover;
   object-position: center;
-  max-height: 213px;
+  max-height: 214px;
   margin-left: 2px;
 }
 
 .pictures div img:first-child {
   margin-bottom: 2px;
+  border-top-right-radius: 15px;
+}
+.pictures div img:last-child {
+  border-bottom-right-radius: 15px;
+}
+
+/************ MINI NAV *************/
+
+.miniNav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+  margin-bottom: 30px;
+}
+
+.miniNav span {
+  font-size: 12px;
+  color: #333333;
+  font-weight: 200;
+}
+
+/************ DESCRIPTION & MAP *************/
+.descriptionMap {
+  display: flex;
+  justify-content: space-between;
+  line-height: 25px;
+  font-family: "Poppins", sans-serif;
+}
+
+.descriptionMap div span {
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 13px;
+  display: block;
+}
+
+/** DESCRIPTION & MAP **/
+
+.createTravel {
+  margin-left: 70px;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.createTravel .topPart {
+  background-color: #ff5d5d;
+  height: 200px;
+  width: 480px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 32px 32px;
+}
+
+.createTravel img {
+  object-fit: cover;
+  width: 100%;
+  max-height: 190px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.createTravel .blackbutton {
+  padding: 18px 16px;
+  border-radius: 21px;
+  font-size: 16px;
+  line-height: 20px;
+  margin: 0;
+}
+
+.topPart div:first-child {
+  font-size: 25px;
+  font-weight: 1000;
+}
+
+/************ FOOTER *************/
+
+footer {
+  height: 156px;
+  background-color: #faf1ed;
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+}
+footer div {
+  font-family: Questrial, sans-serif;
+  font-weight: 100;
+  font-size: 15px;
+  /* -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; */
+  min-width: 1280px;
+  margin: 0 auto;
 }
