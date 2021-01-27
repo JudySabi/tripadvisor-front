@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body header {
   font-family: Questrial, sans-serif;
   font-weight: 600;
@@ -16,6 +20,12 @@ body main {
 p {
   font-family: "Roboto Slab", serif;
   font-weight: 400;
+}
+
+h2 {
+  font-size: 30px;
+  text-align: center;
+  margin-top: 50px;
 }
 /************ HEADER *************/
 
@@ -85,10 +95,12 @@ header input {
   margin-left: 15px;
   align-items: center;
 }
+
 header input:focus {
   border: none;
 }
 
+/************ CATEGORIES *************/
 main h1 {
   font-family: "Poppins", sans-serif;
   font-weight: 800;
@@ -99,8 +111,6 @@ main h1 {
 main h1 span:first-child {
   color: #ff5d5d;
 }
-
-/************ CATEGORIES *************/
 
 .categories {
   display: flex;
@@ -245,6 +255,112 @@ main h1 span:first-child {
   font-weight: 1000;
 }
 
+/************ CONSEILS DE VOYAGE *************/
+
+.travelAdvice div {
+  display: flex;
+  flex-direction: row-reverse;
+  font-size: 15px;
+  color: #333333;
+  font-weight: 200;
+}
+
+.travelAdvice ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+.travelAdvice ul li {
+  width: 290px;
+  height: 75px;
+  border: solid 2px #e0e0e0;
+  border-radius: 17px;
+  padding-left: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.travelAdvice ul li:hover {
+  border: black solid 2px;
+}
+
+.travelAdvice img {
+  max-width: 80px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.travelAdvice ul li span {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.travelAdvice div {
+  margin: 30px 0;
+}
+
+.travelAdvice a:hover {
+  text-decoration: underline;
+}
+/************ IMMANQUABLE A PARIS *************/
+
+.unmissParis div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.unmissParis .leftPart {
+  width: 300px;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 15px;
+  margin-bottom: 50px;
+}
+
+.unmissParis span {
+  font-size: 14px;
+}
+
+.unmissParis .leftPart span:first-child {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.unmissParis p {
+  margin-bottom: 20px;
+}
+
+.unmissParis .rightPart {
+  width: 980px;
+  background-color: lightpink;
+}
+
+/** CARROUSSEL **/
+.carroussel {
+  width: 980px;
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  overflow-x: scroll;
+}
+
+.carroussel .card:not(:last-child) {
+  margin-right: 10px;
+}
+
+.carroussel .card {
+  height: 202px;
+  width: 304px;
+  flex: 1;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+
+.carroussel .card img {
+  object-fit: cover;
+  object-position: center;
+}
+
 /************ FOOTER *************/
 
 footer {
@@ -262,4 +378,8 @@ footer div {
   -moz-osx-font-smoothing: grayscale; */
   min-width: 1280px;
   margin: 0 auto;
+}
+
+footer a:hover {
+  color: #ff5d5d;
 }
