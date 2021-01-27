@@ -353,7 +353,6 @@ main h1 span:first-child {
   width: 304px;
   flex: 1;
   flex-shrink: 0;
-  object-fit: cover;
 }
 
 .carroussel .card img {
