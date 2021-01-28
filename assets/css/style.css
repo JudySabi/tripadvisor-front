@@ -27,6 +27,11 @@ h2 {
   text-align: center;
   margin-top: 50px;
 }
+
+h5 {
+  font-size: 18px;
+  color: #474747;
+}
 /************ HEADER *************/
 
 header {
@@ -257,6 +262,25 @@ main h1 span:first-child {
 
 /************ CONSEILS DE VOYAGE *************/
 
+.blackLine {
+  text-align: center;
+  margin-bottom: 35px;
+}
+.blackLine h2::before {
+  content: "";
+  border-top: 1px solid black;
+  z-index: -1;
+  display: block;
+  width: 100%;
+  position: relative;
+  top: 15px;
+}
+.blackLine h2 {
+  background: white;
+  display: inline;
+  padding: 0px 20px;
+}
+
 .travelAdvice div {
   display: flex;
   flex-direction: row-reverse;
@@ -332,34 +356,67 @@ main h1 span:first-child {
 
 .unmissParis .rightPart {
   width: 980px;
-  background-color: lightpink;
 }
 
 /** CARROUSSEL **/
 .carroussel {
   width: 980px;
+  height: 300px;
   display: flex;
   flex: 1;
   overflow: hidden;
   overflow-x: scroll;
 }
-
-.carroussel .card:not(:last-child) {
-  margin-right: 10px;
-}
-
 .carroussel .card {
-  height: 202px;
-  width: 304px;
   flex: 1;
   flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  position: relative;
+}
+.carroussel .card:not(:last-child) {
+  margin-right: 20px;
+}
+.carroussel .circleLike {
+  background-color: #ffffff;
+  cursor: pointer;
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carroussel .circleLike:hover {
+  background-color: #e0e0e0;
 }
 
 .carroussel .card img {
+  height: 202px;
+  width: 304px;
   object-fit: cover;
   object-position: center;
 }
 
+.carroussel .avis {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  color: #474747;
+}
+
+.carroussel .avis i {
+  margin-right: 3px;
+  color: #00aa6c;
+}
+.carroussel .card span:last-child {
+  font-weight: 400;
+}
 /************ FOOTER *************/
 
 footer {
@@ -369,6 +426,7 @@ footer {
   display: flex;
   align-items: center;
 }
+
 footer div {
   font-family: Questrial, sans-serif;
   font-weight: 100;
