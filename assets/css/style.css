@@ -2,19 +2,17 @@ html {
   scroll-behavior: smooth;
 }
 
-body header {
+.container {
   font-family: Questrial, sans-serif;
   font-weight: 600;
-  /* -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; */
-  width: 1280px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  max-width: 1280px;
   margin: 0 auto;
 }
-body main {
-  font-family: Questrial, sans-serif;
-  font-weight: 600;
-  width: 1280px;
-  margin: 0 auto;
+
+.container header > i {
+  display: none;
 }
 
 p {
@@ -32,42 +30,91 @@ h5 {
   font-size: 18px;
   color: #474747;
 }
-/************ HEADER *************/
 
+/************ HEADER *************/
 header {
   height: 55px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   margin-top: 20px;
-  align-items: center;
-}
-
-.leftPart {
-  display: flex;
-  justify-content: flex-start;
-}
-
-.rightPart {
-  display: flex;
-  justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 header img {
   height: 45px;
-  align-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 header ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: flex-end;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 header ul li {
-  align-self: center;
-  justify-content: flex-end;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   padding: 10px 15px;
   color: #333333;
   cursor: pointer;
+}
+
+header ul li:not(:nth-child(4)):hover {
+  border: 2px solid #333333;
+  padding: 7px 13px;
+  border-radius: 10px;
+}
+
+header input {
+  width: 250px;
+  height: 38px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  padding: 0 12px;
+  margin-left: 30px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header input:focus {
+  border: none;
+}
+
+.leftPart {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.rightPart {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 .blackbutton {
@@ -84,27 +131,6 @@ header ul li {
   color: #ffffff;
 }
 
-header ul li:not(:nth-child(4)):hover {
-  border: 2px solid #333333;
-  padding: 7px 13px;
-  border-radius: 10px;
-}
-
-header input {
-  width: 346px;
-  height: 38px;
-  border: 2px solid #e0e0e0;
-  border-radius: 8px;
-  align-self: center;
-  padding: 0 12px;
-  margin-left: 15px;
-  align-items: center;
-}
-
-header input:focus {
-  border: none;
-}
-
 /************ CATEGORIES *************/
 main h1 {
   font-family: "Poppins", sans-serif;
@@ -118,14 +144,22 @@ main h1 span:first-child {
 }
 
 .categories {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   margin-top: 25px;
 }
 
 .categories div {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   padding: 11px 13px 11px 14px;
   border: 1px solid black;
   border-radius: 12px;
@@ -148,34 +182,51 @@ main h1 span:first-child {
 }
 
 /************ PICTURES *************/
-
 .pictures {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   width: 1280px;
   height: 430px;
   margin-top: 25px;
-  justify-content: space-around;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 .pictures img {
-  box-sizing: border-box;
-  object-fit: cover;
-  object-position: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
 }
+
 .pictures > img {
   border-top-left-radius: 15px;
   border-bottom-left-radius: 15px;
   width: 850px;
 }
+
 .pictures div {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  object-fit: cover;
-  object-position: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
 }
+
 .pictures div img {
-  object-fit: cover;
-  object-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
   max-height: 214px;
   margin-left: 2px;
 }
@@ -184,15 +235,19 @@ main h1 span:first-child {
   margin-bottom: 2px;
   border-top-right-radius: 15px;
 }
+
 .pictures div img:last-child {
   border-bottom-right-radius: 15px;
 }
 
 /************ MINI NAV *************/
-
 .miniNav {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   margin-top: 25px;
   margin-bottom: 30px;
 }
@@ -205,8 +260,12 @@ main h1 span:first-child {
 
 /************ DESCRIPTION & MAP *************/
 .descriptionMap {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   line-height: 25px;
   font-family: "Poppins", sans-serif;
 }
@@ -217,8 +276,6 @@ main h1 span:first-child {
   margin-bottom: 13px;
   display: block;
 }
-
-/** DESCRIPTION & MAP **/
 
 .createTravel {
   margin-left: 70px;
@@ -232,15 +289,30 @@ main h1 span:first-child {
   width: 480px;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   padding: 32px 32px;
 }
 
+.createTravel .topPart div:first-child {
+  font-size: 25px;
+  font-weight: 1000;
+}
+
 .createTravel img {
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   width: 100%;
   max-height: 190px;
   border-bottom-left-radius: 15px;
@@ -255,17 +327,18 @@ main h1 span:first-child {
   margin: 0;
 }
 
-.topPart div:first-child {
-  font-size: 25px;
-  font-weight: 1000;
-}
-
 /************ CONSEILS DE VOYAGE *************/
-
 .blackLine {
   text-align: center;
   margin-bottom: 35px;
+  margin-top: 35px;
 }
+
+.blackLine h2 {
+  background: white;
+  display: inline;
+}
+
 .blackLine h2::before {
   content: "";
   border-top: 1px solid black;
@@ -275,23 +348,28 @@ main h1 span:first-child {
   position: relative;
   top: 15px;
 }
-.blackLine h2 {
-  background: white;
-  display: inline;
-  padding: 0px 20px;
-}
 
 .travelAdvice div {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row-reverse;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
   font-size: 15px;
   color: #333333;
   font-weight: 200;
+  margin: 30px 0;
 }
 
 .travelAdvice ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .travelAdvice ul li {
@@ -300,12 +378,22 @@ main h1 span:first-child {
   border: solid 2px #e0e0e0;
   border-radius: 17px;
   padding-left: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 7px;
 }
 
 .travelAdvice ul li:hover {
   border: black solid 2px;
+}
+
+.travelAdvice ul li span {
+  font-size: 18px;
+  font-weight: 400;
 }
 
 .travelAdvice img {
@@ -314,40 +402,40 @@ main h1 span:first-child {
   margin-right: 10px;
 }
 
-.travelAdvice ul li span {
-  font-size: 18px;
-  font-weight: 400;
-}
-
-.travelAdvice div {
-  margin: 30px 0;
-}
-
 .travelAdvice a:hover {
   text-decoration: underline;
 }
-/************ IMMANQUABLE A PARIS *************/
 
+/************ IMMANQUABLE A PARIS *************/
 .unmissParis div {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .unmissParis .leftPart {
   width: 300px;
-  flex-direction: column;
-  justify-content: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   margin: 15px;
   margin-bottom: 50px;
-}
-
-.unmissParis span {
-  font-size: 14px;
 }
 
 .unmissParis .leftPart span:first-child {
   font-size: 22px;
   margin-bottom: 20px;
+}
+
+.unmissParis span {
+  font-size: 14px;
 }
 
 .unmissParis p {
@@ -362,22 +450,50 @@ main h1 span:first-child {
 .carroussel {
   width: 980px;
   height: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex: 1;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   overflow: hidden;
   overflow-x: scroll;
 }
+
 .carroussel .card {
-  flex: 1;
-  flex-shrink: 0;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   margin: 0;
   position: relative;
 }
+
 .carroussel .card:not(:last-child) {
   margin-right: 20px;
 }
+
+.carroussel .card img {
+  height: 202px;
+  width: 304px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+.carroussel .card span:last-child {
+  font-weight: 400;
+}
+
 .carroussel .circleLike {
   background-color: #ffffff;
   cursor: pointer;
@@ -387,26 +503,31 @@ main h1 span:first-child {
   position: absolute;
   top: 10px;
   right: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .carroussel .circleLike:hover {
   background-color: #e0e0e0;
 }
 
-.carroussel .card img {
-  height: 202px;
-  width: 304px;
-  object-fit: cover;
-  object-position: center;
-}
-
 .carroussel .avis {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-end;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
   color: #474747;
 }
 
@@ -414,25 +535,26 @@ main h1 span:first-child {
   margin-right: 3px;
   color: #00aa6c;
 }
-.carroussel .card span:last-child {
-  font-weight: 400;
-}
-/************ FOOTER *************/
 
+/************ FOOTER *************/
 footer {
   height: 156px;
   background-color: #faf1ed;
   margin-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 footer div {
   font-family: Questrial, sans-serif;
   font-weight: 100;
   font-size: 15px;
-  /* -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   min-width: 1280px;
   margin: 0 auto;
 }
@@ -440,3 +562,106 @@ footer div {
 footer a:hover {
   color: #ff5d5d;
 }
+
+/* ------------------- */
+/* --- MEDIA QUERIES --*/
+/* ------------------- */
+@media (max-width: 1024px) {
+  header ul span {
+    display: none;
+  }
+  .categories {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .categories div {
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+  .pictures {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 600px;
+    margin: 0 auto;
+  }
+  .travelAdvice ul {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .travelAdvice ul li {
+    margin: 10px;
+  }
+  .descriptionMap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .descriptionMap div:first-child {
+    padding: 20px;
+  }
+  .descriptionMap img {
+    width: 520px;
+  }
+  .createTravel {
+    margin: 0 auto;
+  }
+  .unmissParis div {
+    display: block;
+  }
+  .unmissParis div .leftPart {
+    margin: 0 auto 20px auto;
+    text-align: center;
+  }
+  footer div {
+    margin-left: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  header ul {
+    display: none;
+  }
+  header input {
+    display: none;
+  }
+  .container header > i header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .container header > i header > i {
+    display: inline;
+    margin-left: 10px;
+  }
+  .pictures {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    max-width: 700px;
+  }
+  .miniNav {
+    padding: 0 20px;
+  }
+  .createTravel {
+    padding: 0;
+  }
+}
+/*# sourceMappingURL=style.css.map */
