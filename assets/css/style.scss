@@ -30,6 +30,14 @@ h5 {
   font-size: 18px;
   color: #474747;
 }
+
+.displayNone {
+  display: none;
+}
+
+.displayFlex {
+  display: flex;
+}
 /************ HEADER *************/
 
 header {
@@ -117,12 +125,15 @@ main h1 {
 
 .categories {
   display: flex;
-  justify-content: space-between;
   margin-top: 25px;
 
-  div {
+  div:not(:last-child) {
+    margin-right: 16px;
+  }
+
+  div:not(:nth-child(7)) {
     display: flex;
-    justify-content: space-between;
+    // justify-content: space-between;
     padding: 11px 13px 11px 14px;
     border: 1px solid black;
     border-radius: 12px;
@@ -449,14 +460,45 @@ footer {
 /* --- MEDIA QUERIES --*/
 /* ------------------- */
 
+@media (max-width: 1328px) {
+  .categories {
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    // justify-content: space-between;
+
+    div {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      min-width: calc((100% / 4) - (48px / 4));
+      margin-right: 10px;
+      margin-bottom: 10px;
+      padding: 11px 13px 11px 14px;
+      border: 1px solid black;
+      border-radius: 12px;
+      height: 100%;
+      min-height: 48px;
+      max-width: 40px;
+      width: 100%;
+      min-width: 140px;
+      cursor: pointer;
+
+      &:not(:nth-child(4n)) {
+        margin-right: 16px;
+      }
+    }
+  }
+}
+
 @media (max-width: 1024px) {
   header ul span {
     display: none;
   }
 
   .categories {
-    flex-flow: row wrap;
-    justify-content: center;
+    flex-wrap: wrap;
+    // justify-content: center;
 
     div {
       margin-right: 10px;
