@@ -31,16 +31,6 @@ h5 {
   color: #474747;
 }
 
-.displayNone {
-  display: none;
-}
-
-.displayFlex {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
 /************ HEADER *************/
 header {
   height: 55px;
@@ -157,17 +147,19 @@ main h1 span:first-child {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   margin-top: 25px;
 }
 
-.categories div:not(:last-child) {
-  margin-right: 16px;
-}
-
-.categories div:not(:nth-child(7)) {
+.categories div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   padding: 11px 13px 11px 14px;
   border: 1px solid black;
   border-radius: 12px;
@@ -179,13 +171,13 @@ main h1 span:first-child {
   cursor: pointer;
 }
 
-.categories div:not(:nth-child(7)):hover {
+.categories div:hover {
   background-color: black;
   color: #ffffff;
   fill: #ffffff;
 }
 
-.categories div:not(:nth-child(7)):not(svg) {
+.categories div:not(svg) {
   padding-top: 15px;
 }
 
@@ -574,48 +566,18 @@ footer a:hover {
 /* ------------------- */
 /* --- MEDIA QUERIES --*/
 /* ------------------- */
-@media (max-width: 1328px) {
-  .categories {
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-  }
-  .categories div {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    min-width: calc((100% / 4) - (48px / 4));
-    margin-right: 10px;
-    margin-bottom: 10px;
-    padding: 11px 13px 11px 14px;
-    border: 1px solid black;
-    border-radius: 12px;
-    height: 100%;
-    min-height: 48px;
-    max-width: 40px;
-    width: 100%;
-    min-width: 140px;
-    cursor: pointer;
-  }
-  .categories div:not(:nth-child(4n)) {
-    margin-right: 16px;
-  }
-}
-
 @media (max-width: 1024px) {
   header ul span {
     display: none;
   }
   .categories {
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
   .categories div {
     margin-right: 10px;
