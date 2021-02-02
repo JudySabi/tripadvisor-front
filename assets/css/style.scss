@@ -367,6 +367,10 @@ main h1 {
   flex: 1;
   overflow-x: scroll;
 
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
   .card {
     flex: 1;
     flex-shrink: 0;
@@ -388,10 +392,6 @@ main h1 {
     span:last-child {
       font-weight: 400;
     }
-  }
-
-  .carroussel::-webkit-scrollbar {
-    display: none;
   }
 
   .circleLike {
